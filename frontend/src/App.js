@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './components/estilos.css';
+import AgregarGasto from './components/agregarGasto';
+import AgregarIngreso from './components/agregarIngreso';
+import Navbar from './components/Navbar';
+import Dashboard from './components/Dashboard';
 
-function App() {
-    const [categoria, setCategoria] = useState('');
-    const [monto, setMonto] = useState('');
-    const [fecha, setFecha] = useState('');
-
-    const agregarGasto = async () => {
-        await axios.post('http://localhost:5000/gastos', { categoria, monto, fecha });
-        
-    };
-
+const App = () => {
     return (
-        <div>
-            <h1>Registro de Gastos</h1>
-            <input type="text" placeholder="Categoría" onChange={e => setCategoria(e.target.value)} />
-            <input type="number" placeholder="Monto" onChange={e => setMonto(e.target.value)} />
-            <input type="date" onChange={e => setFecha(e.target.value)} />
-            <button onClick={agregarGasto}>Agregar  Gasto</button>
-        </div>
+        <Router>
+            <Navbar />
+            <div className="app-container">
+                <Routes>
+                    <Route path="/" element={
+                        <div className="inicio">
+                            <h1>Sumfly App</h1>
+                            <div className="form-container">
+                                <AgregarGasto />
+                                <AgregarIngreso />
+                            </div>
+                        </div>
+                    } />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
