@@ -8,15 +8,20 @@ const AgregarGasto = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const token = localStorage.getItem('token'); // Obtener el token del almacenamiento local
         try {
-            const response = await axios.post('http://localhost:5000/gastos', { categoria, monto, fecha });
+            const response = await axios.post('http://localhost:5000/gastos', { categoria, monto, fecha }, {
+                headers: {
+                    'x-access-token': token // Enviar el token en los headers
+                }
+            });
             alert(response.data);
             setCategoria('');
             setMonto('');
             setFecha('');
         } catch (error) {
             console.error('Error al agregar gasto:', error);
-            alert('Error al agregar gasto: ' + error.response.data);
+            alert('Error al agregar gasto: ' + (error.response ? error.response.data : 'Error desconocido'));
         }
     };
 
