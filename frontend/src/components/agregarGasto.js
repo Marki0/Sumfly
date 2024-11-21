@@ -5,18 +5,18 @@ const AgregarGasto = () => {
     const [categoria, setCategoria] = useState('');
     const [monto, setMonto] = useState('');
     const [fecha, setFecha] = useState('');
-    const [message, setMessage] = useState(''); // Estado para el mensaje
+    const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = localStorage.getItem('token'); // Obtener el token del almacenamiento local
+        const token = localStorage.getItem('token');
         try {
             const response = await axios.post('http://localhost:5000/gastos', { categoria, monto, fecha }, {
                 headers: {
-                    'x-access-token': token // Enviar el token en los headers
+                    'x-access-token': token
                 }
             });
-            setMessage('Gasto agregado correctamente'); // Establecer el mensaje de éxito
+            setMessage('Gasto agregado correctamente');
             setCategoria('');
             setMonto('');
             setFecha('');
@@ -57,7 +57,7 @@ const AgregarGasto = () => {
                 </div>
             </div>
             <button type="submit">Agregar Gasto</button>
-            {message && <p className="success-message">{message}</p>} {/* Mostrar el mensaje */}
+            {message && <p className="success-message">{message}</p>}
         </form>
     );
 };

@@ -5,14 +5,13 @@ const AgregarIngreso = () => {
     const [tipo, setTipo] = useState('');
     const [monto, setMonto] = useState('');
     const [fecha, setFecha] = useState('');
-    const [message, setMessage] = useState(''); // Estado para el mensaje
+    const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/ingresos', { tipo, monto, fecha });
-            setMessage('Ingreso agregado correctamente'); // Establecer el mensaje de éxito
-            // Reiniciar el formulario
+            setMessage('Ingreso agregado correctamente');
             setTipo('');
             setMonto('');
             setFecha('');
@@ -40,7 +39,7 @@ const AgregarIngreso = () => {
                 </div>
             </div>
             <button type="submit">Agregar Ingreso</button>
-            {message && <p className="success-message">{message}</p>} {/* Mostrar el mensaje */}
+            {message && <p className="success-message">{message}</p>}
         </form>
     );
 };
