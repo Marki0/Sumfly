@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
+import Funcionalidades from './components/Funcionalidades';
 
 const App = () => {
     return (
@@ -17,10 +18,12 @@ const App = () => {
                     <Route path="/" element={
                         <div className="inicio">
                             <h1>Sumfly App</h1>
+                            <h3>Lleva tus gastos al siguiente nivel !</h3>
                             <div className="form-container">
                                 <AgregarGasto />
                                 <AgregarIngreso />
                             </div>
+                            <Funcionalidades />
                         </div>
                     } />
                     <Route path="/login" element={<Login />} />

@@ -61,6 +61,10 @@ h1 {
     display: flex;
     justify-content: center;
 }
+h3{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 400;
+}
 
 .form-container {
     display: flex;
@@ -248,31 +252,48 @@ h1 {
     text-align: center; /* Centrar el texto */
 }
 
+/* Estilos para el h2 de Gastos */
+.gastos-header {
+    color: white; /* Color del texto blanco */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Sombra de texto blanca */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 10px; /* Espacio inferior */
+    font-family: 'Montserrat', sans-serif; /* Asegúrate de que la fuente sea consistente */
+    font-weight: 400;
+}
+
+/* Estilos para la tabla en el Dashboard */
 table {
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Borde gris claro */
     padding: 10px;
     text-align: left;
 }
 
 th {
-    background-color: #242424;
-    color: white;
+    background-color: #242424; /* Fondo oscuro para el encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+tbody tr {
+    background-color: white; /* Fondo blanco para todas las filas */
+    color: #333; /* Color del texto */
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9; /* Color de fondo para filas pares */
 }
 
 tbody tr:hover {
-    background-color: #ddd;
+    background-color: #ddd; /* Color de fondo al pasar el mouse sobre la fila */
 }
+
 /* Estilos para el campo de selección (select) */
 .modern-form select {
     width: 110%;
@@ -350,6 +371,13 @@ tbody tr:hover {
     transition: background-color 0.3s ease, opacity 0.3s ease; /* Transición suave para el fondo y la opacidad */
 }
 
+/* Estilos para el logo */
+.navbar-logo {
+    height: 40px; /* Ajusta la altura según sea necesario */
+    margin-left: 20px; /* Espacio a la izquierda del logo */
+    border-radius: 50%;
+}
+
 /* Estilos para el menú desplegable */
 .nav-links {
     list-style: none;
@@ -379,6 +407,38 @@ tbody tr:hover {
     margin: 3px 0; /* Espaciado entre las barras */
     transition: 0.3s; /* Transición suave */
 }
+
+/* Estilos para la sección de funcionalidades */
+.funcionalidades {
+    background-color: #242424; /* Fondo oscuro para la sección */
+    font-family: 'Montserrat',sans-serif;
+    color: white;
+    padding: 2rem;
+    margin-top: 2rem; /* Espacio superior */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.funcionalidades-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las funcionalidades se envuelvan */
+    justify-content: center; /* Centrar las funcionalidades */
+}
+
+.funcionalidad {
+    width: 30%; /* Ancho de cada funcionalidad */
+    margin: 1rem; /* Espacio entre funcionalidades */
+    text-align: center; /* Centrar el texto */
+}
+
+.funcionalidad h3 {
+    margin-top: 1rem; /* Espacio superior para el título */
+}
+
+.funcionalidad p {
+    margin-top: 0.5rem; /* Espacio superior para la descripción */
+}
+
+
 @media (max-width: 768px) {
     body {
         background-color: #000000; /* Fondo negro en móviles */
@@ -477,6 +537,7 @@ tbody tr:hover {
 
 
 
+
 /* Ocultar el encabezado en móviles */
 @media (max-width: 768px) {
     .inicio h1 {
@@ -502,3 +563,38 @@ tbody tr:hover {
         padding: 1rem; /* Ajustar el padding para pantallas pequeñas */
     }
 }
+
+/* Estilos para la confirmación de cierre de sesión */
+.logout-confirmation {
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #242424; /* Fondo oscuro */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 5px; /* Espacio superior */
+    position: absolute; /* Posición absoluta para que se coloque debajo del navbar */
+    top: 60px; /* Ajustar para que esté justo debajo de la barra de navegación */
+    left: 0; /* Alinear a la izquierda */
+    width: 100%; /* Ancho completo */
+    z-index: 999; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.confirm-button, .cancel-button {
+    background-color: #4b4b4b; /* Color de fondo de los botones */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    margin: 5px; /* Espacio entre botones */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.confirm-button:hover, .cancel-button:hover {
+    background-color: #000000; /* Color de fondo al pasar el mouse */
+}
+
+
