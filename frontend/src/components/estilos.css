@@ -14,6 +14,7 @@ body {
     font-family: 'Indie Flower', cursive;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -27,6 +28,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 .app-container {
@@ -37,7 +39,14 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 60px;
+    background-color: #000000;
 }
+.app-container h2{
+    font-family: 'Montserrat',sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
 
 .navbar h1{
     margin-left: 20px ;
@@ -47,6 +56,8 @@ h1 {
     font-family: 'Indie Flower', cursive;
     font-weight: 700;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .form-container {
@@ -85,6 +96,7 @@ h1 {
     display: block;
     margin-top: 20px;
     font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .modern-form input {
@@ -158,4 +170,302 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+/* Estilo específico para el formulario de login */
+.login-container {
+    background-color: black; /* Fondo negro */
+    color: white; /* Color del texto blanco */
+    width: 100%;
+    height: calc(100vh - 60px); /* Altura completa menos la barra de navegación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    background-color: #242424; /* Fondo del formulario */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos para los campos del formulario */
+.login-form input {
+    background-color: #333; /* Fondo gris oscuro para los campos */
+    color: white; /* Color del texto blanco */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    border-color: #007bff; /* Color del borde al enfocar */
+    outline: none;
+}
+
+/* Estilo para el botón */
+.login-form button {
+    background-color: #4b4b4b;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #000000;
+}
+
+/* Estilo para el enlace de registro */
+.login-form p a {
+    color: white; /* Color blanco para el enlace de registro */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.login-form p a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+/* Estilo para el mensaje de éxito */
+.success-message {
+    color: green; /* Color del texto del mensaje */
+    margin-top: 10px; /* Espacio superior */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+}
+
+table {
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #242424;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+/* Estilos para el campo de selección (select) */
+.modern-form select {
+    width: 110%;
+    padding: 10px;
+    padding-right: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.modern-form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilos para el contenedor de inputs */
+.input-container {
+    display: flex;
+    flex-direction: column; /* Alinear los inputs verticalmente */
+    margin-bottom: 20px; /* Espacio inferior entre inputs y textos */
+}
+
+/* Estilos para cada grupo de input y label */
+.input-group {
+    display: flex;
+    flex-direction: column; /* Alinear el label y el input verticalmente */
+    width: 100%; /* Asegurarse de que ocupe todo el ancho */
+}
+
+/* Estilo para los labels */
+.input-group label {
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    margin-bottom: 5px; /* Espacio entre el label y el input */
+}
+
+/* Estilos para los inputs */
+.input-group input {
+    width: 100%; /* Asegurarse de que ocupe todo el ancho */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición para el borde */
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #454b49; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilos para el contenedor de textos */
+.text-container {
+    display: flex;
+    flex-direction: column; /* Alinear los textos verticalmente */
+    align-items: center; /* Centrar los textos */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    width: 100vw;
+    height: 60px;
+    background-color: #979797;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(161, 156, 156, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Estilos para el menú desplegable */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row; /* Mostrar enlaces en fila por defecto */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px; /* Espaciado entre enlaces */
+}
+
+.menu-icon {
+    display: none; /* Ocultar el icono de menú por defecto */
+    flex-direction: column; /* Alinear las barras verticalmente */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el icono */
+    position: absolute; /* Posicionar el icono de hamburguesa */
+    right: 20px; /* Espacio desde la derecha */
+    top: 15px; /* Espacio desde la parte superior */
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white; /* Color de las barras */
+    margin: 3px 0; /* Espaciado entre las barras */
+    transition: 0.3s; /* Transición suave */
+}
+
+/* Estilos adicionales para mejorar la responsividad */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modern-form {
+        width: 90%;
+        max-width: none;
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar h1 {
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        margin: 5px 0;
+    }
+}
+
+
+/* Estilos para el menú desplegable en móviles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultar enlaces por defecto en móviles */
+        flex-direction: column; /* Alinear enlaces verticalmente */
+        position: absolute; /* Posicionar el menú desplegable */
+        top: 60px; /* Justo debajo de la barra de navegación */
+        left: 0;
+        width: 100%; /* Ancho completo */
+        background-color: #979797; /* Color de fondo del menú */
+        z-index: 999; /* Asegurarse de que esté por encima de otros elementos */
+    }
+
+    .nav-links.open {
+        display: flex; /* Mostrar enlaces cuando el menú está abierto */
+    }
+
+    .menu-icon {
+        display: flex; /* Mostrar el icono de menú en móviles */
+    }
+}
+
+
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .modern-form {
+        width: 80%; /* Ancho del formulario en pantallas pequeñas */
+        max-width: none; /* Sin ancho máximo para que ocupe más espacio */
+        padding: 15px; /* Ajustar el padding para pantallas pequeñas */
+        height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+
+    .input-group {
+        width: 100%; /* Asegurarse de que ocupe todo el ancho */
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 100%; /* Asegurarse de que ocupe todo el ancho */
+        padding: 10px; /* Espaciado interno */
+        margin-bottom: 16px; /* Espacio inferior */
+        border: 1px solid #ccc; /* Borde gris claro */
+        border-radius: 4px; /* Bordes redondeados */
+        transition: border-color 0.3s; /* Transición para el borde */
+    }
+    .input-group select{
+        width: 110%;
+    }
+}
+
+
+
+/* Ocultar el encabezado en móviles */
+@media (max-width: 768px) {
+    .inicio h1 {
+        display: none; /* Ocultar el encabezado en pantallas pequeñas */
+    }
+}
+
+/* Aumentar el margen superior en móviles */
+@media (max-width: 768px) {
+    .app-container {
+        margin-top: 80px; /* Aumentar el margen superior para móviles */
+    }
 }

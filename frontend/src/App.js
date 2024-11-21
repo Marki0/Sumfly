@@ -14,7 +14,7 @@ const App = () => {
             <Navbar />
             <div className="app-container">
                 <Routes>
-                <Route path="/" element={
+                    <Route path="/" element={
                         <div className="inicio">
                             <h1>Sumfly App</h1>
                             <div className="form-container">

@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './estilos.css';
 
 const Navbar = () => {
-    const handleLogout = () => {
-        localStorage.removeItem('token'); // Eliminar el token del almacenamiento local
-        window.location.href = '/login'; // Redirigir al login
-    };
+    const [isOpen, setIsOpen] = useState(false); // Estado para controlar el menú desplegable
 
-    const isLoggedIn = !!localStorage.getItem('token'); // Verificar si hay un token
+    const toggleMenu = () => {
+        setIsOpen(!isOpen); // Cambiar el estado del menú
+    };
 
     return (
         <nav className="navbar">
-            <h1>Sumfly</h1>
-            <div className="navbar-links">
-                <Link to="/">Inicio</Link>
-                <Link to="/dashboard">Dashboard</Link>
-                {isLoggedIn ? ( // Mostrar "Cerrar Sesión" si está logueado
-                    <Link to="#" onClick={handleLogout} className="logout-link">Cerrar Sesión</Link>
-                ) : ( // Mostrar "Login" si no está logueado
-                    <Link to="/login">Login</Link>
-                )}
+            <h1>Sumfly App</h1>
+            <div className="menu-icon" onClick={toggleMenu}>
+                {/* Icono de hamburguesa */}
+                <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+                <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+                <div className={`bar ${isOpen ? 'open' : ''}`}></div>
             </div>
+            <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+                <li><Link to="/">Inicio</Link></li>
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li><Link to="/login">Iniciar Sesión</Link></li>
+            </ul>
         </nav>
     );
-}
+};
 
 export default Navbar;
